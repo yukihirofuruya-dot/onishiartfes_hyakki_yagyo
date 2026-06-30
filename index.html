@@ -131,24 +131,45 @@
     .hero-meta-date { font-size: clamp(0.9rem, 5vw, 1.2rem); }
     .hero-meta-place { font-size: 0.75rem; letter-spacing: 0.08em; }
 
-    /* shinki: 左テキストのみ・右の神出鬼没は非表示 */
-    .shinki-img { height: auto; min-height: 50vw; object-fit: cover; }
+    /* shinki: テキスト縦積み + 神出鬼没を下に表示 */
+    .shinki-img { height: auto; object-fit: cover; }
     .shinki-overlay { flex-direction: column; padding: 24px 20px 32px; gap: 12px; }
-    .shinki-right { display: none; }
+    .shinki-right {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 16px;
+      justify-content: flex-end;
+    }
+    .shinki-kanji-top, .shinki-kanji-bottom { font-size: 3rem; }
     .shinki-question { font-size: 1.2rem; }
     .shinki-subheading { font-size: 0.85rem; }
     .shinki-copy { font-size: 0.8rem; line-height: 2; }
 
-    /* recruit */
-    .recruit-img { height: auto; min-height: 50vw; object-fit: cover; }
+    /* recruit: テキスト縦積み + 応募ボタン小さく + あなたの異形を下に */
+    .recruit-img { height: auto; object-fit: cover; }
     .recruit-overlay { flex-direction: column; padding: 24px 20px 32px; gap: 12px; }
-    .recruit-right { display: none; }
+    .recruit-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 16px;
+      gap: 0;
+    }
+    .recruit-kanji-top, .recruit-kanji-bottom { font-size: 2rem; line-height: 1.3; }
     .recruit-main-title { font-size: 1.5rem; }
     .recruit-sub { font-size: 0.78rem; line-height: 2; }
+    .btn-apply { padding: 10px 24px; font-size: 0.75rem; }
 
-    /* overview */
-    .overview-grid { grid-template-columns: 1fr; }
+    /* overview: PC版と同じグリッド */
+    .overview-grid { grid-template-columns: 1fr 1fr; }
     .timeline-row { grid-template-columns: 56px 1fr; gap: 12px; }
+    .workshop-grid { grid-template-columns: 1fr 1fr; }
+
+    /* workshop */
+    .workshop-grid { grid-template-columns: 1fr 1fr; }
+    .workshop-title { font-size: 1.8rem; }
+    .workshop-lead { font-size: 0.8rem; }
 
     /* audience */
     #audience { height: auto; min-height: 280px; }
