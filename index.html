@@ -25,6 +25,15 @@
   .hero-oaf-logo { width: clamp(160px, 28vw, 260px); }
   .hero-opening-simple { font-size: clamp(0.7rem, 1.6vw, 0.88rem); font-weight: 300; letter-spacing: 0.45em; color: var(--gold); margin-bottom: 28px; opacity: 0.85; }
   .hero-en { font-size: clamp(0.7rem, 2vw, 1rem); font-weight: 200; letter-spacing: 0.6em; color: var(--gold); margin-bottom: 8px; opacity: 0.9; }
+  .hero-onishi {
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    color: var(--white);
+    opacity: 0.85;
+    margin-bottom: 0;
+    text-align: center;
+  }
   .hero-title { font-size: clamp(3.8rem, 13vw, 9.5rem); font-weight: 900; line-height: 1.0; color: var(--white); text-shadow: 0 0 120px rgba(192,57,43,0.5); margin-bottom: 20px; letter-spacing: 0.05em; }
   .hero-whisper { font-size: clamp(0.9rem, 2.2vw, 1.2rem); font-weight: 200; letter-spacing: 0.5em; color: var(--grey); margin-top: 20px; margin-bottom: 20px; opacity: 0.75; }
   .hero-divider { width: 1px; height: 32px; background: linear-gradient(to bottom, transparent, var(--red), transparent); margin: 0 auto 20px; }
@@ -55,6 +64,21 @@
   .recruit-overlay { position: absolute; inset: 0; display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: clamp(32px, 8vw, 100px); gap: 40px; }
   .recruit-left { flex: 1; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
   .recruit-eyebrow { font-size: clamp(0.9rem, 1.8vw, 1.1rem); font-weight: 400; letter-spacing: 0.3em; color: var(--gold); font-feature-settings: "palt" 1; }
+  .recruit-options { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+  .recruit-option { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: rgba(255,255,255,0.04); border-left: 2px solid rgba(192,57,43,0.4); }
+  .recruit-option--recommended { border-left-color: var(--gold); background: rgba(201,168,76,0.06); }
+  .recruit-option-num { font-size: 0.7rem; font-weight: 700; color: var(--red); letter-spacing: 0.1em; flex-shrink: 0; padding-top: 2px; }
+  .recruit-option--recommended .recruit-option-num { color: var(--gold); }
+  .recruit-option-title { font-size: clamp(0.85rem, 1.8vw, 1rem); font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .recruit-option-desc { font-size: clamp(0.75rem, 1.5vw, 0.85rem); font-weight: 300; color: rgba(240,236,228,0.7); line-height: 1.8; font-feature-settings: "palt" 1; }
+  .recruit-option-note { font-size: 0.7rem; color: var(--grey); }
+  .badge-recommend { font-size: 0.65rem; font-weight: 700; color: var(--black); background: var(--gold); padding: 2px 8px; margin-left: 8px; vertical-align: middle; }
+  .recruit-conditions { margin: 16px 0; padding: 16px 20px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(192,57,43,0.25); }
+  .recruit-conditions-title { font-size: 0.72rem; font-weight: 700; color: var(--red); letter-spacing: 0.3em; margin-bottom: 10px; }
+  .recruit-conditions-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .recruit-conditions-list li { font-size: clamp(0.75rem, 1.5vw, 0.85rem); font-weight: 300; color: rgba(240,236,228,0.8); padding-left: 12px; position: relative; line-height: 1.8; font-feature-settings: "palt" 1; }
+  .recruit-conditions-list li::before { content: "・"; position: absolute; left: 0; color: var(--red); }
+  .recruit-note { font-size: 0.72rem; font-weight: 300; color: var(--grey); margin-bottom: 16px; font-feature-settings: "palt" 1; line-height: 1.8; }
   .recruit-eyebrow-large { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: 0.1em; color: var(--white); margin-bottom: 4px; font-feature-settings: "palt" 1; }
   .recruit-main-title { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 900; color: var(--white); line-height: 1.2; font-feature-settings: "palt" 1; }
   .recruit-sub { font-size: clamp(0.82rem, 1.6vw, 0.95rem); font-weight: 300; line-height: 2.4; color: rgba(240,236,228,0.78); font-feature-settings: "palt" 1; }
@@ -196,6 +220,7 @@
     </div>
     <p class="hero-opening-simple" style="margin-bottom:28px;">鬼石芸術祭 2026 オープニングセレモニー</p>
     <p class="hero-en">HYAKKI YAGYŌ 2026</p>
+    <p class="hero-onishi">鬼石</p>
     <h1 class="hero-title">百鬼夜行</h1>
     <p class="hero-whisper">見るべからず。</p>
     <div class="hero-divider"></div>
@@ -233,8 +258,44 @@
     <div class="recruit-left">
       <p class="recruit-eyebrow-large">参加者募集</p>
       <h2 class="recruit-main-title">百鬼、集まれ！</h2>
-      <p class="recruit-sub">鬼や妖怪はカテゴリでしかない。名前がなくていい。正解もない。衣装でも、仮面でも、立ち居振る舞いでも。表現方法は問わない。<br><br>河童も、天狗も、座敷わらしも——各時代の誰かが「これは何だ」と感じて形にしてきた。あなたが思う異形の者を、この世に解き放ってください。</p>
-      <a href="https://forms.gle/vucQ97z2ufHrk5Gw8" class="btn-apply" target="_blank">応募する →</a>
+      <p class="recruit-sub">年齢・性別問わず、どなたでもご参加いただけます。<br>行列への参加方法は3つからお選びいただけます。</p>
+
+      <div class="recruit-options">
+        <div class="recruit-option">
+          <span class="recruit-option-num">01</span>
+          <div>
+            <p class="recruit-option-title">当日レンタルで参加</p>
+            <p class="recruit-option-desc">衣装を無料でレンタルして参加いただけます。<span class="recruit-option-note">※数量に限りがあります</span></p>
+          </div>
+        </div>
+        <div class="recruit-option recruit-option--recommended">
+          <span class="recruit-option-num">02</span>
+          <div>
+            <p class="recruit-option-title">妖怪工房で制作して参加 <span class="badge-recommend">おすすめ</span></p>
+            <p class="recruit-option-desc">アーティストと一緒に衣装や仮面を制作し参加できます。</p>
+          </div>
+        </div>
+        <div class="recruit-option">
+          <span class="recruit-option-num">03</span>
+          <div>
+            <p class="recruit-option-title">自前の衣装・仮面で参加</p>
+            <p class="recruit-option-desc">ご自身で衣装や仮面をご準備の上、ご参加いただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="recruit-conditions">
+        <p class="recruit-conditions-title">参加条件</p>
+        <ul class="recruit-conditions-list">
+          <li>一緒に歩ける方（ルートは約1kmです）</li>
+          <li>百鬼夜行の一員として全体と調和し、観客に驚嘆の姿を届けること</li>
+          <li>写真・動画への出演に同意いただける方</li>
+        </ul>
+      </div>
+
+      <p class="recruit-note">※参加者の集合時間は16:00を予定しています。詳細は申し込み後に別途ご案内します。</p>
+
+      <a href="https://forms.gle/vucQ97z2ufHrk5Gw8" class="btn-apply" target="_blank">参加申し込みはこちら →</a>
     </div>
     <div class="recruit-right">
       <div class="recruit-kanji-top">あなたの<br>異形を、</div>
@@ -261,7 +322,9 @@
   <div class="workshop-section">
     <p class="section-eyebrow" style="margin-top:60px;">参加への道</p>
     <h3 class="workshop-title">妖怪工房</h3>
-    <p class="workshop-lead">百鬼夜行に、衣装や仮面をアーティストと一緒に制作して参加することができます。<br>アーティストが様々な素材や造形を準備。初めての方でも、手ぶらで気軽に参加いただけます。<br>自分だけの異形を、この工房で形にしてください。</p>
+    <p class="workshop-lead">百鬼夜行に、衣装や仮面をアーティストと一緒に制作して参加することができます。</p>
+    <p class="workshop-lead">講師は鬼石在住のアーティスト、アニタ・ガラツツァ氏をはじめ数名のアーティストが担当します。工房には仮面の元になる造形や衣装、粘土など多くの素材が用意されています。</p>
+    <p class="workshop-lead">会の冒頭では制作に向けたレクチャーを行い、創作のヒントになる事例もご紹介します。アイデアがなくても、一緒に楽しく制作できる工房です。共に百鬼夜行を楽しみましょう！</p>
 
     <div class="workshop-grid">
       <div class="workshop-item">
